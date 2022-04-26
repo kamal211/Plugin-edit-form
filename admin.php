@@ -65,45 +65,61 @@
 
 
 <?php
-$data= array($_POST['box-name'],$_POST['box-email']);
-$variable = array($namechecked,$emailchecked);
+// global $namechecked;
+// global $emailchecked;
+// $data= array($_POST['box-name'],$_POST['box-email']);
+// $variable = array($namechecked,$emailchecked);
 
 
 
-for($i=0; $i<count($data);$i++)
-{
+// for($i=0; $i<count($data);$i++)
+// {
   
-checkVal($data[$i],$variable[$i]);
+// checkVal($data[$i],$variable[$i]);
 
 
-}
-
-
-    function checkVal ($box,$var)
-{
-  
-        if ( isset( $box,$var ) )
-              {$var= true;}
-        else  
-        { 
-                $var= false;
-        }
-       
-        update_option( " . $box .", $var);
-    }
-
-
-
-// if ( isset( $_POST['box-name'] ) )
-//       {$namechecked= true;}
-// else  
-// { 
-//     $namechecked= false;
 // }
 
-// if ( isset( $_POST['submit'] ) ){
-//     echo $_POST['box-name'];
-//     update_option( "first_name", $namechecked);} ?>
+
+//     function checkVal ($box,$var)
+// {
+  
+//         if ( isset( $box,$var ) )
+//               {$var= true;}
+//         else  
+//         { 
+//                 $var= false;
+//         }
+       
+//         update_option(".$box.", $var);
+//     }
+
+
+
+if ( isset( $_POST['box-name'] ) )
+      {$namechecked= true;}
+else  
+{ 
+    $namechecked= false;
+}
+    if(isset( $_POST['box-email'] ) )
+      {$emailchecked= true;}
+else  
+{ 
+    $emailchecked= false;
+}
+
+    $data= array('Name','Email');
+    $vari= array($namechecked, $emailchecked);
+    for($i=0; $i<count($data);$i++)
+    {
+        if ( isset( $_POST['submit'] ) ){
+    update_option($data[$i],$vari[$i]);
+}
+    
+    }
+
+    ?>
 
 
 <?php
