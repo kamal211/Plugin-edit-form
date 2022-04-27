@@ -28,15 +28,15 @@ function donate_shortcode() {
         }
         add_shortcode('donate', 'donate_shortcode');
 
-add_action( 'admin_menu', 'wporg_options_page' );
-function wporg_options_page() {
+add_action( 'admin_menu', 'form_options_page' );
+function form_options_page() {
     add_menu_page(
-        'WPOrg',
-        'WPOrg Options',
+        'Form Contact',
+        'Form Contact',
         'manage_options',
         plugin_dir_path(__FILE__) . 'admin.php',
         null,
-        'dashicons-admin-settings',
+        'dashicons-admin-generic',
         90
     );
 }
