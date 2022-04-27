@@ -21,13 +21,62 @@
  * Text Domain:       my-basics-plugin
  * Domain Path:       /languages
  */
+
+
+function form_plugin()
+{
+        
+        $form = '';
+        $form .='<h2>Contact us </h2>';
+        $form .= '<form method="post" action="http://localhost/wordpress/thanks/" >';
+        if (get_option('Name') == 1){
+
+        $form .='<label for="Name">Name </label>';
+        $form .='<input type="text" name="Name" class="form-control" placeholder="enter your name">';
+ 
+        }        
+        if (get_option('Email') == 1){
+
+        $form .='<label for="Email">Email </label>';
+        $form .='<input type="email" name="Email" class="form-control" placeholder="enter your email">';
+        }
+        if (get_option('Phone-number')== 1){
+
+        $form .='<label for="Phone number">Phone number </label>';
+        $form .='<input type="num" name="Phone-number" class="form-control" placeholder="enter your number">';
+
+        }
+        if (get_option('Company')==1){
+
+        $form .='<label for="Company">Company </label>';
+        $form .='<input type="text" name="Company" class="form-control" placeholder="enter your Company">';
+        }
+        
+        // $form .='<label for="Subject">Subject </label>';
+        // $form .='<input type="text" name="Subject" class="form-control" placeholder="enter your Subject">';
+
+        
+        // $form .='<label for="Question">Question</label>';
+        // $form .='<input type="text" name="Question" class="form-control" placeholder="enter your Question">';
+
+        $form .= '<br/> <input type="submit" name="form_submit" value="send your information" class="btn btn-md btn-primary ">';
+        $form .= '</form>';
+
+
+        
+        return $form;
+        
+
+}
 add_filter( 'show_admin_bar', '__return_false');
 
-function donate_shortcode() {
-  return 'test shortcode';
-        }
-        add_shortcode('donate', 'donate_shortcode');
-
+// function donate_shortcode() {
+        
+//         $hassan = get_option('Name') ;
+//         echo $hassan;
+//         }
+        add_shortcode('donate', 'form_plugin');
+ 
 add_action( 'admin_menu', 'form_options_page' );
 function form_options_page() {
     add_menu_page(
@@ -40,4 +89,5 @@ function form_options_page() {
         90
     );
 }
+
 ?>
