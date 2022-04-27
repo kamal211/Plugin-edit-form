@@ -13,7 +13,7 @@
  * Version:           1.10.3
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Author:            kamal&shaimae
+ * Author:            kamal & Chaimae
  * Author URI:        https://author.example.com/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -51,13 +51,18 @@ function form_plugin()
         $form .='<label for="Company">Company </label>';
         $form .='<input type="text" name="Company" class="form-control" placeholder="enter your Company">';
         }
-        
-        // $form .='<label for="Subject">Subject </label>';
-        // $form .='<input type="text" name="Subject" class="form-control" placeholder="enter your Subject">';
 
-        
-        // $form .='<label for="Question">Question</label>';
-        // $form .='<input type="text" name="Question" class="form-control" placeholder="enter your Question">';
+        if (get_option('Subject')==1){
+
+        $form .='<label for="Subject">Subject </label>';
+        $form .='<input type="text" name="Subject" class="form-control" placeholder="enter your Subject">';
+        }
+
+        if (get_option('Question')==1){
+
+        $form .='<label for="Question">Question</label>';
+        $form .='<input type="text" name="Question" class="form-control" placeholder="enter your Question">';
+        }
 
         $form .= '<br/> <input type="submit" name="form_submit" value="send your information" class="btn btn-md btn-primary ">';
         $form .= '</form>';
@@ -70,12 +75,7 @@ function form_plugin()
 }
 add_filter( 'show_admin_bar', '__return_false');
 
-// function donate_shortcode() {
-        
-//         $hassan = get_option('Name') ;
-//         echo $hassan;
-//         }
-        add_shortcode('donate', 'form_plugin');
+add_shortcode('short_form', 'form_plugin');
  
 add_action( 'admin_menu', 'form_options_page' );
 function form_options_page() {
