@@ -64,36 +64,6 @@
 
 
 <?php
-// global $namechecked;
-// global $emailchecked;
-// $data= array($_POST['box-name'],$_POST['box-email']);
-// $variable = array($namechecked,$emailchecked);
-
-
-
-// for($i=0; $i<count($data);$i++)
-// {
-  
-// checkVal($data[$i],$variable[$i]);
-
-
-// }
-
-
-//     function checkVal ($box,$var)
-// {
-  
-//         if ( isset( $box,$var ) )
-//               {$var= true;}
-//         else  
-//         { 
-//                 $var= false;
-//         }
-       
-//         update_option(".$box.", $var);
-//     }
-
-
 
     if ( isset( $_POST['box-name'] ) )
       {$namechecked= true;}
@@ -145,26 +115,9 @@ $questionchecked= false;
 }
     
     }
-    // get_results();
+    
     ?>
 
-
 <?php
-
-// if ( isset( $_POST['submit'] ) ){
-
-//     global $wpdb;
-
-
-//     $tablename=$wpdb->prefix.'wp_options';
-
-//     $data=array(
-//         'option_name' => $_POST['box-name'], 
-//         'option_value' => 'true'
-//        );
-
-
-//      $wpdb->insert( $tablename, $data);
-// }
 
 ?>
