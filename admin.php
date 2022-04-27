@@ -31,22 +31,18 @@
                 <input type="num" name="Phone number" class="form-control" placeholder="enter your number">
             </div>
             <div class="form-check">
-                <input class="form-check-input mt-4" type="checkbox" name="box-phone" id="Company">
+                <input class="form-check-input mt-4" type="checkbox" name="box-company" id="Company">
                 <label for="Company">Company </label>
                 <input type="text" name="Company" class="form-control" placeholder="enter your Company">
             </div>
             <div class="form-check">
-                <input class="form-check-input mt-4" type="checkbox" name="box-phone" id="Subject">
+                <input class="form-check-input mt-4" type="checkbox" name="box-subject" id="Subject">
                 <label for="Subject">Subject </label>
                 <input type="text" name="Subject" class="form-control" placeholder="enter your Subject">
             </div>
+           
             <div class="form-check">
-                <input class="form-check-input mt-4" type="checkbox" name="box-phone" id="Subject">
-                <label for="Subject">Subject </label>
-                <input type="text" name="Subject" class="form-control" placeholder="enter your Subject">
-            </div>
-            <div class="form-check">
-                <input class="form-check-input mt-4" type="checkbox" name="box-phone" id="Question">
+                <input class="form-check-input mt-4" type="checkbox" name="box-question" id="Question">
                 <label for="Question">Question</label>
                 <textarea type="text" name="Question" class="form-control" placeholder="enter your Question"></textarea>
             </div>
@@ -96,12 +92,13 @@
 
 
 
-if ( isset( $_POST['box-name'] ) )
+    if ( isset( $_POST['box-name'] ) )
       {$namechecked= true;}
 else  
 { 
     $namechecked= false;
 }
+
     if(isset( $_POST['box-email'] ) )
       {$emailchecked= true;}
 else  
@@ -109,8 +106,34 @@ else
     $emailchecked= false;
 }
 
-    $data= array('Name','Email');
-    $vari= array($namechecked, $emailchecked);
+    if(isset( $_POST['box-phone'] ) )
+      {$phonechecked= true;}
+else  
+{ 
+    $phonechecked= false;
+}
+
+    if(isset( $_POST['box-company'] ) )
+       {$companychecked= true;}
+else  
+{ 
+    $companychecked= false;
+}
+    if(isset( $_POST['box-subject'] ) )
+        {$subjectchecked= true;}
+else  
+{ 
+$subjectchecked= false;
+}
+    if(isset( $_POST['box-question'] ) )
+        {$questionchecked= true;}
+else  
+{ 
+$questionchecked= false;
+}
+
+    $data= array('Name','Email','Phone-number','Company','subject','Question');
+    $vari= array($namechecked, $emailchecked,$phonechecked,$companychecked,$subjectchecked,$questionchecked);
     for($i=0; $i<count($data);$i++)
     {
         if ( isset( $_POST['submit'] ) ){
