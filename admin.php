@@ -14,7 +14,7 @@
 <body>
    
     <section class='container '>
-        <h2 class='text-center'>Contact us</h2>
+        <h2 class='text-center'>Customize Your Form</h2>
         <form method="post" action="#" class='mx-auto w-50'>
             <div class="form-check">
                 <input class="form-check-input mt-4" type="checkbox" name="box-name" id="Name">
@@ -47,11 +47,13 @@
                 <label for="Question">Question</label>
                 <textarea type="text" name="Question" class="form-control" placeholder="enter your Question"></textarea>
             </div>
-            <div class="col-auto mt-4">
-                <button type="submit" name='submit' class="btn btn-primary mb-3">Save changes</button>
+            <div class="col-auto text-center  mt-4">
+                <button type="submit" name='submit' class="btn btn-primary  mb-3">Save changes</button>
             </div>
-
+            <hr>
         </form>
+        <p class="text-center fw-bold fs-6 ms-6">Paste this shortcode <input type='text' class='text-center' value="[short_form]" size='10' disabled> in your page to see the modified form</p>
+        <hr>
     </section>
   
   
