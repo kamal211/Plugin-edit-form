@@ -70,9 +70,10 @@ function form_plugin()
 
         
         return $form;
-        
+           
 
 }
+
 add_filter( 'show_admin_bar', '__return_false');
 
 add_shortcode('short_form', 'form_plugin');
